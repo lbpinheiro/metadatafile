@@ -1,46 +1,24 @@
-# FCC Image Search
+# File Metadata 
 
-Image Search Abstraction Layer @FreeCodeCamp, required for Back End Developer Certification.
+File Metada Microservice @FreeCodeCamp, required for Back End Developer Certification.
 
-This is a A [FreeCodeCamp](https://www.freecodecamp.com/challenges/image-search-abstraction-layer) exercice.
+This is a A [FreeCodeCamp](https://www.freecodecamp.com/challenges/file-metadata-microservice) exercice.
 
 ## API Documentation
 
-### Endpoint
-  `http://zapimages.herokuapp.com/`
-
-### Routes
-
 Route                 | Method | Description
 ----------------------|--------|------------
-/search/:term         | GET    | Searches for :term images
-/search/:term/:page   | GET    | Searches for :term images with pagination through response
-/latest               | GET    | Returns latest 10 searches
-/top                  | GET    | Returns top 10 searches
+https://metadatafile.herokuapp.com/api         | POST    | Returns a JSON with details of submited files
 
-### Responses
+## Responses
 
-All routes returns an array of objects (limited by 10)
+* Smooth run
 
-* `/search/:term` and `/search/:term/:page`
 ```javascript
 [
   {
-    imageLink:  [String], //image link
-    pageLink:   [String], //page link
-    snippet:    [String]  //image's descriptive text
-  }
-]
-```
-
-* `/latest` and `/top`
-```javascript
-[
-  {
-    term:       [String], //searched term
-    count:      [Number], //number of times this term was searched
-    createdAt:	[String], //first time <Timestamp> this term was searched
-    updatedAt:  [String]  //last time <Timestamp> this term was searched
+    originalName:  [String], //file's name
+    size:          [Number], //file's size (in bytes)
   }
 ]
 ```
@@ -48,25 +26,13 @@ All routes returns an array of objects (limited by 10)
 * If something went wrong
 ```javascript
 {
-  error:        [String]  //error description
+  error:          [String]  //error description
 }
 ```
 
-## Examples
+## Example
 
-Address               | Description | Result
-----------------------|--------|------------
-`http://zapimages.herokuapp.com/search/mongodb` | Searches for 'mongodb' | [See result](http://zapimages.herokuapp.com/search/mongodb)
-`http://zapimages.herokuapp.com/search/mongodb/3` | Paginate throught 'mongodb' results | [See result](http://zapimages.herokuapp.com/search/mongodb/3)
-`http://zapimages.herokuapp.com/search/roger%20federer/ff` | Try to search for 'roger federer' but with an invalid page number. An error is shown | [See result](http://zapimages.herokuapp.com/search/roger%20federer/ff)
-`http://zapimages.herokuapp.com/latest` | Shows the most 10 recent searches | [See result](http://zapimages.herokuapp.com/latest)
-`http://zapimages.herokuapp.com/top` | Shows the 10 most popular searches | [See result](http://zapimages.herokuapp.com/top)
-
-## TODO
-
-* An API test page, similar with what I did with [Request Header App](https://fcc-requestheader.herokuapp.com/test)
-* Separate [GoogleCS](https://github.com/lbpinheiro/fcc-imagesearch/blob/master/app/api/googlecs.js) into a different package
-* Tweak [GoogleCS](https://github.com/lbpinheiro/fcc-imagesearch/blob/master/app/api/googlecs.js)
+Please visit the (test page)[https://metadatafile.herokuapp.com/]
 
 ## Author
 
