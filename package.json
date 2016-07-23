@@ -1,0 +1,29 @@
+{
+  "name": "metadatafile",
+  "version": "1.0.0",
+  "description": "Metadata File API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbpinheiro/metadatafile.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "node"
+  ],
+  "author": "Lucas Batochi Pinheiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbpinheiro/metadatafile/issues"
+  },
+  "homepage": "https://github.com/lbpinheiro/metadatafile#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "multer": "^1.1.0",
+    "serve-favicon": "^2.3.0"
+  }
+}

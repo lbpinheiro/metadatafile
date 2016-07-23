@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>File Metadata API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../../dist/images/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="ten columns">
+        <div class="center-text row">
+          <h1>File Metadata</h1>
+          <p>A <a href="https://www.freecodecamp.com/challenges/file-metadata-microservice">FreeCodeCamp</a> exercise</p>
+        </div>
+        <div class="row shiftDown center-text">
+
+          <div class="row center-text">
+            <pre><code id="returningJson">
+            </code></pre>
+          </div>
+
+          <form method="post" enctype="multipart/form-data">
+            <div class="eight columns">
+              <input type="file" id="file" name="file">
+            </div>
+            <div class="four columns">
+              <input type="submit">
+            </div>
+          </form>
+        </div>
+
+        <div class="row center-text">
+          <hr/>
+          <p><a href="https://twitter.com/lucasdesenv">Lucas B. Pinheiro</a> 2016</p>
+          <p>This code is on Github <a href="https://github.com/lbpinheiro/metadatafile">
+<img border="0" alt="Github logo" src="GitHub-Mark-32px.png">
+</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      //TODO validation
+      /*$(':file').change(function(){
+        var file = this.files[0];
+        var name = file.name;
+        var size = file.size;
+        var type = file.type;
+      });*/
+      
+      $("form").submit(function() {
+        
+        var formData = new FormData($('form')[0]);
+        $.ajax({
+          url: '/api/',
+          type: 'POST',
+          data: formData,
+          success: function (data) {
+              $("#returningJson").html(JSON.stringify(data));
+          },
+          cache: false,
+          contentType: false,
+          processData: false
+        });
+
+        return false;
+      });
+
+    </script>
+  </body>
+</html>
