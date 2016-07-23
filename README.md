@@ -10,6 +10,8 @@ Route                 | Method | Description
 ----------------------|--------|------------
 https://metadatafile.herokuapp.com/api         | POST    | Returns a JSON with details of submited files
 
+This API uses [multer package](https://www.npmjs.com/package/multer)
+
 ## Responses
 
 * Smooth run
@@ -32,7 +34,7 @@ https://metadatafile.herokuapp.com/api         | POST    | Returns a JSON with d
 
 ## Example
 
-Please visit the [test page](https://metadatafile.herokuapp.com/)
+Please visit the [test page](https://metadatafile.herokuapp.com/) for an example with one `file` submition
 
 ## Author
 
