@@ -32,7 +32,7 @@ https://metadatafile.herokuapp.com/api         | POST    | Returns a JSON with d
 
 ## Example
 
-Please visit the (test page)[https://metadatafile.herokuapp.com/]
+Please visit the [test page](https://metadatafile.herokuapp.com/)
 
 ## Author
 
