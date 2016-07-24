@@ -34,7 +34,7 @@ This API uses [multer package](https://www.npmjs.com/package/multer)
 
 ## Example
 
-Please visit the [test page](https://metadatafile.herokuapp.com/) for an example with one `file` submition
+Please visit the [test page](https://metadatafile.herokuapp.com/) for an example with one `file` submission
 
 ## Author
 
